@@ -13,5 +13,6 @@ class Selenium_4_Popup_Page(Element_Operations):
     allure.step("Closing selenium banner pop up")
 
     def close_selenium_four_popup(self):
+        self.set_fullscreen_window()
         self.wait_until_element_present(OR.Selenium4_popup_close_icon)
         self.click(OR.Selenium4_popup_close_icon)
