@@ -22,10 +22,11 @@ class Common_Operations:
         "PARTIAL_LINK_TEXT": By.PARTIAL_LINK_TEXT
     }
 
-    def get_locator_signature(self, locator):
+    def get_locator_signature_value(self, locator):
         try:
             selector = str(locator).split("__")[1]
-            return self._selectors_dict[selector]
+            selector_list = [self._selectors_dict[selector], str(locator).split("__")[0]]
+            return selector_list
         except:
             print(traceback.print_exc())
 

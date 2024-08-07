@@ -7,7 +7,6 @@ from Selenium_Operations.Waits_Operations import Waits_Operations
 from Utils.Common_Operations import Common_Operations
 from Utils.Logging_Operations import Logger
 
-
 log = Logger(__name__, logging.INFO)
 
 
@@ -24,8 +23,8 @@ class Element_Operations(Waits_Operations, Common_Operations, Driver_Operations)
     # This function return web element
     def find_element(self, locator):
         try:
-            web_element = self.driver.find_element(self.get_locator_signature(locator),
-                                                   self.get_value("../conf.ini", "LOCATORS", locator))
+            web_element = self.driver.find_element(self.get_locator_signature_value(locator)[0],
+                                                   self.get_locator_signature_value(locator)[1])
             self.highlight_element(web_element)
             log.logger.info(f"{web_element} in focus now")
             print(f"{web_element} in focus now")
@@ -37,8 +36,8 @@ class Element_Operations(Waits_Operations, Common_Operations, Driver_Operations)
     # This function return list of web elements
     def find_elements(self, locator):
         try:
-            web_elements = self.driver.find_elements(self.get_locator_signature(locator),
-                                                     self.get_value("../conf.ini", "LOCATORS", locator))
+            web_elements = self.driver.find_elements(self.get_locator_signature_value(locator)[0],
+                                                     self.get_locator_signature_value(locator)[1])
             self.highlight_element(web_elements)
             log.logger.info(f"{web_elements} in focus now")
             print(f"{web_elements} in focus now")

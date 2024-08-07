@@ -19,11 +19,10 @@ class Test_Dummy_Registration(BaseTest):
         Selenium4PopUpPage = Selenium_4_Popup_Page(self.driver)
         home = Home_Page(self.driver)
         dummy_reg = dummy_registration(self.driver)
-        log.logger.info("********** Test Do Sign up started **********")
+        # Selenium4PopUpPage.close_selenium_four_popup()
         home.moving_to_Dummy_Registration_Page()
         dummy_reg.fill_registration_form(name, phoneNum, email, country, city, username, password)
-        log.logger.info("********** Test Do Sign up successfully executed **********")
-        log.logger.info("********** Test Do Sign up successfully executed **********")
+
 
 
 
