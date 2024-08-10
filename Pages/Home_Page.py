@@ -10,8 +10,6 @@ class Home_Page(Element_Operations):
         self.driver = driver
         Element_Operations.__init__(self, self.driver)
 
-    allure.step("Moving to dummy registration page")
-
     def moving_to_Dummy_Registration_Page(self):
         self.wait_until_element_present_visible(Resources_OR.resources)
         self.move_to_element(Resources_OR.resources).perform_after_actionChains()

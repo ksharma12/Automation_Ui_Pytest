@@ -38,7 +38,7 @@ class Element_Operations(Waits_Operations, Common_Operations, Driver_Operations)
         try:
             web_elements = self.driver.find_elements(self.get_locator_signature_value(locator)[0],
                                                      self.get_locator_signature_value(locator)[1])
-            self.highlight_element(web_elements)
+            # self.highlight_element(web_elements)
             log.logger.info(f"{web_elements} in focus now")
             print(f"{web_elements} in focus now")
             return web_elements

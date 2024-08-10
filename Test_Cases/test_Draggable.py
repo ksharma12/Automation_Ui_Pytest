@@ -28,7 +28,7 @@ class Test_Draggable(BaseTest):
         auto_practice_site_1.Automation_Practice_Site_Window_Title()
         auto_practice_site_1.Enter_Draggable_page()
         auto_practice_site_1.Drag_and_Drop()
-        time.sleep(10)
+
 
 
 
