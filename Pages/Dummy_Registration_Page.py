@@ -1,29 +1,35 @@
-import time
+import allure
 
-from selenium.webdriver.common.by import By
-
-import OR
+from Object_Repository import Dummy_Registration_Form_OR
 from Selenium_Operations.Element_Operations import Element_Operations
 
 
-class dummy_registration(Element_Operations):
+class Dummy_Registration_Page(Element_Operations):
     def __init__(self, driver):
         self.driver = driver
         Element_Operations.__init__(self, self.driver)
 
+    allure.step("User fill registration form with all the fields")
+
     def fill_registration_form(self, name, phoneNumber, email, country, city, username, password):
         self.set_fullscreen_window()
-        self.wait_until_element_present_visible(OR.name)
-        self.send_keys(OR.name, name)
-        self.wait_until_element_present_visible(OR.phone)
-        self.send_keys(OR.phone, phoneNumber)
-        self.wait_until_element_present_visible(OR.email)
-        self.send_keys(OR.email, email)
-        self.wait_until_element_present_visible(OR.country)
-        self.select_by_value(OR.country, country)
-        self.wait_until_element_present_visible(OR.city)
-        self.send_keys(OR.city, city)
-        self.wait_until_element_present_visible(OR.username)
-        self.send_keys(OR.username, username)
-        self.wait_until_element_present_visible(OR.password)
-        self.send_keys(OR.password, password)
+        self.wait_until_element_present_visible(Dummy_Registration_Form_OR.name)
+        self.send_keys(Dummy_Registration_Form_OR.name, name)
+        self.wait_until_element_present_visible(Dummy_Registration_Form_OR.phone)
+        self.send_keys(Dummy_Registration_Form_OR.phone, phoneNumber)
+        self.wait_until_element_present_visible(Dummy_Registration_Form_OR.email)
+        self.send_keys(Dummy_Registration_Form_OR.email, email)
+        self.wait_until_element_present_visible(Dummy_Registration_Form_OR.country)
+        self.select_by_value(Dummy_Registration_Form_OR.country, country)
+        self.wait_until_element_present_visible(Dummy_Registration_Form_OR.city)
+        self.send_keys(Dummy_Registration_Form_OR.city, city)
+        self.wait_until_element_present_visible(Dummy_Registration_Form_OR.username)
+        self.send_keys(Dummy_Registration_Form_OR.username, username)
+        self.wait_until_element_present_visible(Dummy_Registration_Form_OR.password)
+        self.send_keys(Dummy_Registration_Form_OR.password, password)
+
+    allure.step("User clicked on link Enter To The Testing Website")
+
+    def enter_to_the_testing_website(self):
+        self.wait_until_element_present_visible(Dummy_Registration_Form_OR.ENTER_TO_THE_TESTING_WEBSITE)
+        self.click(Dummy_Registration_Form_OR.ENTER_TO_THE_TESTING_WEBSITE)

@@ -2,17 +2,21 @@ import traceback
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from Utils.Common_Operations import Common_Operations
+from conftest import config
 
 
 class Waits_Operations(Common_Operations):
 
+    # explicit_wait = config.get('BASIC_CONFIGS', 'explicit_wait')
+    # fluent_wait = config.get('BASIC_CONFIGS', 'fluent_wait')
+
     def __init__(self, driver):
         self.driver = driver
         Common_Operations.__init__(self, self.driver)
-        self.explicit_wait = 10
-        self.fluent_wait = 0.01
-        # self.explicit_wait = int(self.get_value("../conf.ini", "BASIC_CONFIGS", "explicit_wait"))
-        # self.fluent_wait = float(self.get_value("../conf.ini", "BASIC_CONFIGS", "fluent_wait"))
+        # self.explicit_wait = 10
+        # self.fluent_wait = 0.01
+        self.explicit_wait = int(config.get('BASIC_CONFIGS', 'explicit_wait'))
+        self.fluent_wait = float(config.get('BASIC_CONFIGS', 'fluent_wait'))
 
     # This function return element once it become clickable and return ele
     def wait_until_element_clickable(self, locator):

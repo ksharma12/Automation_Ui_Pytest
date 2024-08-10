@@ -1,3 +1,4 @@
+# Dummy Registration Form
 name = "//input[@name='name']__XPATH"
 phone = "input[name='phone']__CSS"
 email = "email__NAME"
