@@ -18,8 +18,8 @@ EXPLORE_LIFETIME_MEMBERSHIP = "//div[@id='load_box']//a[@class='fancybox'][norma
 Submit_btn = "//div[@id='load_box']//input[@value='Submit']__XPATH"
 
 # Zendesk_Chat_Window_Page
-zendesk_chat_window = "//iframe[@title='Zendesk Chat widget window']__XPATH"
-zendesk_minimize_btn = "//div[@title='Minimize']__XPATH"
+Zendesk_Chat_Window = "//iframe[@title='Zendesk Chat widget window']__XPATH"
+Zendesk_Minimize_Btn = "//div[@title='Minimize']__XPATH"
 
 # Dummy_Registration_Page
 Selenium4_popup_close_icon = "//i[@class='eicon-close']__XPATH"
