@@ -10,7 +10,6 @@ from Pages.Selenium_4_Popup_Page import Selenium_4_Popup_Page
 from Test_Cases.BaseTest import BaseTest
 from Utils import dataProvider
 from Utils.Logging_Operations import Logger
-
 log = Logger(__name__, logging.INFO)
 
 
