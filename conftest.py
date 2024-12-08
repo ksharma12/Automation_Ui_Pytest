@@ -2,6 +2,7 @@ import configparser
 import os
 import allure
 import pytest
+from allure_commons.types import AttachmentType
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
@@ -33,8 +34,8 @@ def log_on_failure(request, get_browser):
     item = request.node
     driver_ops = get_browser
     if item.rep_call.failed:
-        pass
-        # allure.attach(driver_ops.get_screenshot_as_png(), name="Bug_screenshot", attachment_type = .PNG)
+        # pass
+        allure.attach(driver.get_screenshot_as_png(), name="login", attachment_type=AttachmentType.PNG)
 
 
 @pytest.fixture(params=browsers, scope="function")
