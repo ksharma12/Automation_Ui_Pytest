@@ -24,8 +24,6 @@ Zendesk_Minimize_Btn = "//div[@title='Minimize']__XPATH"
 # Dummy_Registration_Page
 Selenium4_popup_close_icon = "//i[@class='eicon-close']__XPATH"
 
-menu = "//i[@class='" + eicon-close + "']__XPATH"
-
 # Automation_Practice_Site_Page
 resources = "//li[@id='menu-item-27617']//span[@class='menu-text'][normalize-space()='Resources']__XPATH"
 resources_practice_site_1 = "//li[@id='menu-item-27618']//span[@class='menu-text'][normalize-space()='Practice Site 1']__XPATH"
