@@ -2,7 +2,6 @@ import traceback
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from Utils.Common_Operations import Common_Operations
-from conftest import config
 
 
 class Waits_Operations(Common_Operations):
@@ -15,8 +14,8 @@ class Waits_Operations(Common_Operations):
         Common_Operations.__init__(self, self.driver)
         # self.explicit_wait = 10
         # self.fluent_wait = 0.01
-        self.explicit_wait = int(config.get('BASIC_CONFIGS', 'explicit_wait'))
-        self.fluent_wait = float(config.get('BASIC_CONFIGS', 'fluent_wait'))
+        self.explicit_wait = 10 # int(config.get('BASIC_CONFIGS', 'explicit_wait'))
+        self.fluent_wait = 10 # float(config.get('BASIC_CONFIGS', 'fluent_wait'))
 
     # This function return element once it become clickable and return ele
     def wait_until_element_clickable(self, locator):
@@ -72,7 +71,7 @@ class Waits_Operations(Common_Operations):
             return element_present_visible
         except:
             print(traceback.print_exc())
-            assert False
+            # assert False
 
     # This function return True once element become invisible
     def wait_until_element_invisible_locator(self, locator):

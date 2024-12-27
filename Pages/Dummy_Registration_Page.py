@@ -1,4 +1,5 @@
 import allure
+from allure_commons._allure import step
 
 from Object_Repository import Dummy_Registration_Form_OR
 from Selenium_Operations.Element_Operations import Element_Operations
@@ -9,6 +10,7 @@ class Dummy_Registration_Page(Element_Operations):
         self.driver = driver
         Element_Operations.__init__(self, self.driver)
 
+    @allure.step("Fill complete Registration form")
     def fill_registration_form(self, name, phoneNumber, email, country, city, username, password):
         self.set_fullscreen_window()
         self.wait_until_element_present_visible(Dummy_Registration_Form_OR.name)
@@ -26,5 +28,6 @@ class Dummy_Registration_Page(Element_Operations):
         self.wait_until_element_present_visible(Dummy_Registration_Form_OR.password)
         self.send_keys(Dummy_Registration_Form_OR.password, password)
 
+    @allure.step("Enter Testing Website")
     def enter_to_the_testing_website(self):
         self.click(Dummy_Registration_Form_OR.ENTER_TO_THE_TESTING_WEBSITE)
